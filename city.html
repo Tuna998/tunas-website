@@ -49,27 +49,39 @@
         <h1 class="PhotoTitle">City Lights</h1>
 
         <div class="Polaroid" style="--rotate: -10deg; --x: -600px; --y: -300px;">
-            <img src="Images/Blue bird.jpg" alt="Nature 1">
+            <img src="Images/City/NYCbridge.jpg" class="Vinyl" alt="City 1">
         </div>
 
         <div class="Polaroid" style="--rotate: -10deg; --x: 0px; --y: 200px;">
-            <img src="Images/Timesquare slow.jpg" alt="Nature 1">
+            <img src="Images/City/Timesquare slow.jpg" class="Vinyl" alt="City 1">
         </div>
         <div class="Polaroid" style="--rotate: 0deg; --x: 0px; --y: -300px;">
-            <img src="Images/Sign.jpg" alt="Nature 1">
+            <img src="Images/City/Sign.jpg" class="Vinyl" alt="City 1">
         </div>
 
         <div class="Polaroid" style="--rotate: 12deg; --x: 600px; --y: -300px;">
-            <img src="Images/Plane Reflection.jpg" alt="Nature 2">
+            <img src="Images/City/Empire_sunset.jpg" class="Vinyl" alt="City 2">
         </div>
 
         <div class="Polaroid" style="--rotate: -6deg; --x: 600px; --y: 200px;">
-            <img src="Images/Paris.JPG" alt="Nature 3">
+            <img src="Images/City/Paris.JPG" class="Vinyl" alt="City 3">
         </div>
 
         <div class="Polaroid" style="--rotate: 7deg; --x: -600px; --y: 200px;">
-            <img src="Images/Turquoise moon.jpg" alt="Nature 4">
+            <img src="Images/City/Temple.jpg" class="Vinyl" alt="City 4">
         </div>
      </div>
+
+ <div class="Modal" id="Modal">
+        <span class="Close" id="Close">&times;</span>
+        <img class="ModalContent" id="ModalImage">
+    </div>
+
+     <div class="Lightbox" id="Lightbox" onclick="closeLightbox()">
+          <span class="LightboxClose" onclick="closeLightbox()">&times;</span>
+          <img class="LightboxImage" id="LightboxImage" onclick="event.stopPropagation()">
+     </div>
+
+<script src="js/script-photos.js"></script>
 </body>
 </html>

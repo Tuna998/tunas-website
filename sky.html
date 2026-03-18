@@ -49,27 +49,40 @@
         <h1 class="PhotoTitle">The Art in the sky</h1>
 
         <div class="Polaroid" style="--rotate: -10deg; --x: -600px; --y: -300px;">
-            <img src="Images/Blue bird.jpg" alt="Nature 1">
+            <img src="Images/Sky/Above The clouds.jpg" class="Vinyl" alt="Sky 1">
         </div>
 
         <div class="Polaroid" style="--rotate: -10deg; --x: 0px; --y: 200px;">
-            <img src="Images/Timesquare slow.jpg" alt="Nature 1">
+            <img src="Images/Sky/Hugging The moon.jpg" class="Vinyl" alt="Sky 2">
         </div>
+
         <div class="Polaroid" style="--rotate: 0deg; --x: 0px; --y: -300px;">
-            <img src="Images/Sign.jpg" alt="Nature 1">
+            <img src="Images/Sky/Snow Clouds.jpg" class="Vinyl" alt="Sky 3">
         </div>
 
         <div class="Polaroid" style="--rotate: 12deg; --x: 600px; --y: -300px;">
-            <img src="Images/Plane Reflection.jpg" alt="Nature 2">
+            <img src="Images/Sky/Shooting Star.jpg" class="Vinyl" alt="Sky 4">
         </div>
 
         <div class="Polaroid" style="--rotate: -6deg; --x: 600px; --y: 200px;">
-            <img src="Images/Paris.JPG" alt="Nature 3">
+            <img src="Images/Sky/Colour Gradient.jpg" class="Vinyl" alt="Sky 5">
         </div>
 
         <div class="Polaroid" style="--rotate: 7deg; --x: -600px; --y: 200px;">
-            <img src="Images/Turquoise moon.jpg" alt="Nature 4">
+            <img src="Images/Sky/Turquoise moon.jpg" class="Vinyl" alt="Sky 6">
         </div>
      </div>
+
+      <div class="Modal" id="Modal">
+        <span class="Close" id="Close">&times;</span>
+        <img class="ModalContent" id="ModalImage">
+    </div>
+
+     <div class="Lightbox" id="Lightbox" onclick="closeLightbox()">
+          <span class="LightboxClose" onclick="closeLightbox()">&times;</span>
+          <img class="LightboxImage" id="LightboxImage" onclick="event.stopPropagation()">
+     </div>
+
+<script src="js/script-photos.js"></script>
 </body>
 </html>
