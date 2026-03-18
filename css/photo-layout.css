@@ -1,0 +1,81 @@
+
+.CategoryWall {
+    position: relative;
+    width: 100%;
+    height: 90vh;            /* enough space to scatter around title */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PhotoTitle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: "Source Code Pro", sans-serif;
+    text-decoration: underline;
+    font-size: 60px;
+    z-index: 10;
+    text-align: center;
+}
+
+.Polaroid {
+    position: absolute;
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--rotate, 0deg));
+    transition: transform 0.3s;
+}
+
+.Polaroid img {
+   flex: 0 0 auto;
+  width: 200px;               /* Polaroid size */
+  height: 200px;
+  object-fit: cover;
+  background-color: #fff;     /* Polaroid border */
+  padding: 10px 10px 30px 10px; /* thicker bottom */
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* soft shadow */
+  border-radius: 4px;         /* optional: slight rounding */
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s, z-index 0.3s;
+  margin: 50px auto 0 auto;
+  margin-left: -50px;
+  position: relative;
+  z-index: 1;
+}
+
+.Polaroid:hover {
+    transform: translate(var(--x), var(--y)) rotate(calc(var(--rotate) + 5deg)) scale(1.05);
+    z-index: 20;
+}
+
+.Modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal image */
+.ModalContent {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 15px;
+}
+
+/* Close button */
+.Close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
