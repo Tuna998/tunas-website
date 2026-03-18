@@ -1,8 +1,97 @@
+/* Hamburger menu */
+.Hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 2000;
+}
+.Hamburger .Bar {
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+/* Dropdown (desktop & mobile) */
+.Dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DropdownArrow {
+    display: none; /* hide on desktop */
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    user-select: none;
+}
+
+/* Mobile-only styles */
 @media (max-width: 768px) {
-    
-    .Header {
+
+    /* Show hamburger */
+    .Hamburger {
+        display: flex;
+    }
+
+    /* Pages menu hidden initially */
+    .Pages {
+        display: none;
         flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Show pages when hamburger is clicked */
+    .Pages.active {
+        display: flex;
+    }
+
+    /* Dropdown parent full width and flex for arrow */
+    .Dropdown {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+    }
+
+    /* Show arrow on mobile */
+    .DropdownArrow {
+        display: inline-block;
+    }
+
+    /* Submenu hidden by default on mobile */
+    .Submenu {
+        display: none !important; /* hide until arrow click */
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 5px;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* Show submenu when arrow clicked */
+    .Dropdown.active .Submenu {
+        display: flex !important;
+    }
+
+    /* Submenu links style for mobile */
+    .Submenu a {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Header stacks vertically */
+    .Header {
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center;
         gap: 10px;
     }
@@ -12,21 +101,25 @@
         gap: 5px;
     }
 
-    .Pages {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .Pages a {
-        margin-left: 0; /* remove spacing */
+    .Profile {
+        width: 40px;
+        height: 40px;
     }
 
     .Home {
         margin: 10px 0;
     }
-}
 
+    .HomeIcon {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Optional: adjust PageName font size */
+    .PageName {
+        font-size: 28px;
+    }
+}
 .Header {
     display: flex;
     align-items: center;
