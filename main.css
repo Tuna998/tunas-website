@@ -1,0 +1,417 @@
+@media (max-width: 768px) {
+    
+    .Header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .Handle {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .Pages {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Pages a {
+        margin-left: 0; /* remove spacing */
+    }
+
+    .Home {
+        margin: 10px 0;
+    }
+}
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #000;
+    padding: 10px 20px;
+    font-family: "Source Code Pro", sans-serif;
+
+    flex-wrap: wrap; /* 🔥 IMPORTANT */
+}
+
+.Header2 {
+    border-bottom: 2px solid #00ccff;
+}
+.Header3 {
+    border-bottom: 2px solid #0004ff;
+}
+.Header4 {
+    border-bottom: 2px solid #ff0000;
+}
+
+.Handle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.Pages a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 40px;
+}
+.Pages a:hover {
+    color: blue;
+}
+.HomeIcon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.PageBanner {
+    background-color: #000;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.PageBanner2 {
+    background-color: #009420;
+}
+.PageBanner3 {
+  background-color: #005fad;
+}
+.PageBanner4{
+  background-color: #edf060;
+}
+.PageBanner5 {
+  background: linear-gradient( to right, red,orange,yellow,green,blue,indigo,violet);
+}
+.PageName {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: static;
+    margin: 0;
+    font-family: "Source Code Pro", sans-serif;
+
+}
+
+/* Slideshow container */
+.Slideshow {
+  width: 80%;
+  max-width: 900px;
+  height: 500px;
+  position: relative;
+  margin: 50px auto 0 auto; /* centers slideshow */
+  border-radius: 20px;       /* round corners */
+  overflow: hidden;           /* keep images inside corners */
+}
+
+.Slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+}
+
+.Slide:first-child {
+  display: block;
+}
+
+/* Buttons */
+.Prev, .Next {
+  position: absolute;
+  top: 50%;                       /* vertically centered */
+  transform: translateY(-50%);
+  width: 40px;                     /* square buttons */
+  height: 40px;
+  background: rgba(255,255,255,0.7); /* semi-transparent white */
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 40px;               /* center arrow vertically */
+  text-align: center;
+  z-index: 10;
+  transition: background 0.2s;
+  border-radius: 4px;              /* slightly rounded corners */
+}
+
+/* Hover effect */
+.Prev:hover, .Next:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* Left and right positions */
+.Prev {
+  left: 0;   /* at the very left edge of slideshow */
+}
+
+.Next {
+  right: 0;  /* at the very right edge of slideshow */
+}
+
+.slideshowSeparator {
+  height: 3px;          /* thickness */
+  background: black; /* optional gradient */
+  margin: 50px 30px;
+  border-radius: 2px;   /* soft edges */
+}
+
+.IndicatorContainer {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Moving indicator */
+.Indicator {
+  width: calc(100% / 4); /* divide by number of slides */
+  height: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: transform 0.3s ease; /* smooth movement */
+  transform: translateX(0%);
+}
+
+.VinylSlider {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;             /* keeps vinyl overlap effect */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* Vinyl images → now Polaroid style */
+.Vinyl {
+  flex: 0 0 auto;
+  width: 100px;               /* Polaroid size */
+  height: 100px;
+  object-fit: cover;
+  background-color: #fff;     /* Polaroid border */
+  padding: 10px 10px 30px 10px; /* thicker bottom */
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* soft shadow */
+  border-radius: 4px;         /* optional: slight rounding */
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s, z-index 0.3s;
+  margin: 50px auto 0 auto;
+  margin-left: -60px;
+  position: relative;
+  z-index: 1;
+
+  transform: rotate(-2deg); /* slight tilt for realism */
+}
+
+.Vinyl2 {
+  flex: 0 0 auto;
+  width: 110px;               /* Polaroid size */
+  height: 110px;
+  object-fit: cover;
+  background-color: #fff;     /* Polaroid border */
+  padding: 10px 10px 30px 10px; /* thicker bottom */
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* soft shadow */
+  border-radius: 4px;         /* optional: slight rounding */
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s, z-index 0.3s;
+  margin: 50px auto 0 auto;
+  margin-left: -60px;
+  position: relative;
+  z-index: 1;
+
+  transform: rotate(-2deg); /* slight tilt for realism */
+}
+
+/* Reset first child margin */
+.Vinyl:first-child {
+  margin-left: 0;
+}
+
+.Vinyl2:first-child {
+  margin-left: 0;
+}
+
+/* Hover pop effect */
+.Vinyl:hover {
+  transform: translateY(-20px) scale(1.1) rotate(0deg); /* straighten on hover */
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+.Vinyl2:hover {
+  transform: translateY(-20px) scale(1.1) rotate(0deg); /* straighten on hover */
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Modal overlay */
+.Modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal image */
+.ModalContent {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 15px;
+}
+
+/* Close button */
+.Close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#musicBox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #222;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  user-select: none;
+  z-index: 1000;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#musicBox:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+.Lightbox {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.LightboxImage {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.LightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+/* Dropdown container positioning */
+.Dropdown {
+    position: relative; /* needed so submenu positions correctly */
+    display: inline-block; /* keeps it in line with other links */
+}
+
+/* Hide submenu by default */
+.Submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* directly below "Catagories" */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+/* Show submenu on hover */
+.Dropdown:hover .Submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Submenu links style */
+.Submenu a {
+    display: block;
+    padding: 8px 15px;
+    color: #000; /* matches your main link color */
+    text-decoration: none;
+    font-family: "Source Code Pro", sans-serif;
+}
+
+.Submenu a:hover {
+    background-color: #f0f0f0; /* highlight on hover */
+    color: blue; /* optional, matches your main link hover */
+}
+
+#rightClickOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+#rightClickOverlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#rightClickOverlay .overlayContent {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
